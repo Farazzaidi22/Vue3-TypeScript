@@ -1,13 +1,17 @@
 <template>
   <div class="app">
     <header>
+      <div class="title">
+        <h1>Hyrule Jobs</h1>
+        <img src="https://raw.githubusercontent.com/iamshaunjp/vue-with-typescript/37bfdc59cae3a8b98a43dcb256b5b73bf0f200b5/src/assets/heart.svg" alt="heart">
+      </div>
       <div class="order">
         <button @click="handleClick('title')">order by title</button>
         <button @click="handleClick('salary')">order by salary</button>
         <button @click="handleClick('location')">order by location</button>
       </div>
     </header>
-    
+
     <JobList
       :jobs="jobs"
       :order="order"
@@ -48,7 +52,7 @@ export default defineComponent( {
 </script>
 
 <style>
-header {
+  header {
     text-align: center;
   }
   header .order {
@@ -63,5 +67,16 @@ header {
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
+  }
+  header .title{
+    display: flex;
+    justify-content: center;
+  }
+  header img {
+    width: 60px;
+    margin-right: 20px;
+  }
+  header h1 {
+    font-size: 3em;
   }
 </style>

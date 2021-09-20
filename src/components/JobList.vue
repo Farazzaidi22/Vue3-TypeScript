@@ -1,20 +1,21 @@
 <template>
   <div class="job-list">
     <p>Ordered by {{ order }}</p>
-    <ul>
+    <transition-group name="list" tag="ul">
       <li
         v-for="job in ordereJobs"
         :key="job.id"
       >
         <h2>{{ job.title }} in {{job.location}}</h2>
         <div class="salary">
+            <img src="https://raw.githubusercontent.com/iamshaunjp/vue-with-typescript/37bfdc59cae3a8b98a43dcb256b5b73bf0f200b5/src/assets/rupee.svg" alt="rupee">
           <p>{{job.salary}} rupees</p>
         </div>
         <div class="description">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, accusantium tempora in ea reprehenderit modi qui incidunt? Impedit iste dolore repellat ullam libero dolor aspernatur repellendus ipsum aut, tempora voluptatum.</p>
         </div>
       </li>
-    </ul>
+    </transition-group>
   </div>
 </template>
 
@@ -76,5 +77,8 @@ export default defineComponent( {
     color: #17bf66;
     font-weight: bold;
     margin: 10px 4px;
+  }
+   .list-move {
+    transition: all 1s;
   }
 </style>
